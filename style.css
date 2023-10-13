@@ -1,0 +1,131 @@
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  background: #272c34;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  position: relative;
+  height: 180px;
+  width: 180px;
+  background-color: #7ddffc;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  animation: darken 4s linear infinite;
+}
+
+.sun-box {
+  position: absolute;
+  
+  width: 200px;
+  height: 200px;
+  /* background-color: tomato; */
+  top: 20px;
+  left: -10px;
+  animation: sun-spin 4s linear infinite;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #ffef00;
+  box-shadow: 0 0 10px #ffef00;
+}
+
+.sand {
+  background-color: #f0de75;
+  position: absolute;
+  height: 30%;
+  width: 100%;
+  bottom: 0;
+}
+
+/* The clip-path CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden. */
+
+.triangle1 {
+  background-color: #dedbdb;
+  position: absolute;
+  top: -10px;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(50% 50%, 0 100%, 75% 100%);
+}
+
+.triangle2 {
+  position: absolute;
+  top: -10px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  clip-path: polygon(50% 50%, 100% 100%, 75% 100%);
+}
+.shadow {
+  position: absolute;
+  height: 50%;
+  width: 53%;
+  top: 70%;
+  left: 23%;
+  clip-path: polygon(100% 0, 0 0, 100% 0);
+  background-color: #c0b25e;
+  z-index: 1;
+  animation: shadow-effect 4s linear infinite ;
+ 
+}
+
+@keyframes sun-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shadow-effect {
+  0% {
+    clip-path: polygon(100% 0, 0 0, 100% 0);
+  }
+  25% {
+    clip-path: polygon(100% 0, 0 0, 100% 50%);
+  }
+  40% {
+    clip-path: polygon(100% 0, 0 0, 5% 75%);
+  }
+  60% {
+    clip-path: polygon(100% 0, 5% 0, 0 10%);
+  }
+  65% {
+    clip-path: polygon(100% 0, 5% 0, 0 0);
+  }
+}
+
+@keyframes darken {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+}
